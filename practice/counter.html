@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        var count=0;
+    function inc(){
+        count++;
+        genui();
+    }
+    function dec(){
+        count--;
+        genui();
+    }
+    function resetcount(){
+        count=0;
+        genui();
+    }
+    function genui(){
+    var ui = <div>
+        <h1>count :{count}</h1>
+    <button onClick={()=>{inc()}}>Increment</button>
+    <button onClick={()=>{dec()}}>Decrement</button>
+    <button onClick={()=>{resetcount()}}>ResetCounter</button>
+    </div>
+ReactDOM.render(ui,document.getElementById('root'))
+    
+}
+genui();
+
+    </script>
+</body>
+</html>

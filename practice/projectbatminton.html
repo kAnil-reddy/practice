@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        var player1={
+            name:'sindhu',
+            score:0,
+            sets:0,
+            service:false
+        };
+        var player2={
+            name:'martin',
+            score:0,
+            sets:0,
+            service:true
+        };
+        function incsindhu(){
+            player1.score++;
+            player1.service=true;
+            player2.service=false;
+            if(player1.score==21 && player2.score<20){
+                player1.sets++;
+                player1.score=0;
+                player2.score=0;
+            }
+            Genui();
+        }
+        function incmarin(){
+            player2.score++;
+            player1.service=false;
+            player2.service=true;
+            if(player2.score==21 && player1.score<20){
+                player2.sets++;
+                player1.score=0;
+
+
+                
+                player2.score=0;
+            }
+            Genui();
+        }
+function Genui(){
+    var ui = <div>
+    <table>
+        <tr>
+            <td>{player1.name}</td>
+            <td>{player1.score}</td>
+            <td>{player1.sets}</td>
+            <td>{player1.service &&  <button>S</button>}  </td>
+            <td><button onClick={()=>{incsindhu()}}>Increase sindhu point</button></td>    
+
+            
+            
+            </tr>
+        <tr>
+            <td>{player2.name}</td>
+            <td>{player2.score}</td>
+            <td>{player2.sets}</td>
+            <td>{player2.service && <button>S</button>} </td>
+                <td><button onClick={()=>{incmarin()}}>Increase marin point</button></td>
+                
+        
+            
+            </tr>
+        </table>
+    
+    </div>
+    ReactDOM.render(ui,document.getElementById('root'))
+
+
+}
+Genui();
+    </script>
+</body>
+</html>

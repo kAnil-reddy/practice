@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="checkbox" name="tech" value="html" onchange="abc(event)">HTML
+    <input type="checkbox" name="tech" value="css" onchange="abc(event)">CSS
+    <input type="checkbox" name="tech" value="js" onchange="abc(event)">JS
+    <input type="checkbox" name="tech" value="pt" onchange="abc(event)">PY
+    <input type="checkbox" name="tech" value="react" onchange="abc(event)">React
+    <ul id="q1"></ul>
+<script>
+    function abc(ev){
+        document.getElementById('q1').innerHTML="";
+        var x = document.getElementsByName("tech");
+        for(var i=0;i<=x.length-1;i++){
+            if(x[i].checked===true){
+                var y = document.createElement('li');
+                y.innerHTML=x[i].value;
+                document.getElementById('q1').appendChild(y);
+            }
+        }
+    }
+</script>
+</body>
+</html>

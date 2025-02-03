@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="q1"></div>
+    <script>
+        var students = ['akshay','prudvi','mounika','kavya'];
+        for(var i =0;i<=students.length-1;i++){
+            var nli = document.createElement('li');
+            nli.innerHTML=students[i];
+            document.getElementById('q1').appendChild(nli);
+        }
+
+    </script></body>
+</html>

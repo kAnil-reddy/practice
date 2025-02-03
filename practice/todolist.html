@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+ <script type="text/babel">
+function Todolist(){
+    var [todos,settodos]=React.useState([]);
+    function addtodo(){
+        var x = document.getElementById('q1').value;
+        settodos([...todos,{title:x,status:false}])
+    }
+    function donetodo(ind){
+        var temp = [...todos];
+        temp[ind].status=!(temp[ind].status);
+        settodos([...temp]);
+
+    }
+    return <div>
+        <input type="text" id="q1"/>
+        <button onClick={()=>{addtodo()}}>Addtodo</button>
+        {
+            todos.map((x,i)=>{
+                return <li style={x.status?{textDecoration:'line-through'}:{}}>
+                    {x.title}
+                    <button onClick={()=>{donetodo(i)}}>done</button>
+                    </li>
+            })
+        }
+        </div>
+}
+ReactDOM.render(<Todolist></Todolist>,document.getElementById('root'));
+ </script>
+
+</body>
+</html>

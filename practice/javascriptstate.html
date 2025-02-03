@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- 26.print only the even numbers of array of numbers in list items -->
+    <div id="d2"></div>
+    <script type="text/babel">
+         function Jkl() {
+         var [students, setStudents] = React.useState([
+                {
+                    firstname: "Praveen",
+                    lastname: "Gubbala",
+                    age: 40,
+                    gender:'female'
+                },
+                {
+                    firstname: "Rohit",
+                    lastname: "Sharma",
+                    age: 35,
+                    gender:"male"
+                },
+                {
+                    firstname: "Sachin",
+                    lastname: "Tendulkar",
+                    age: 50,
+                    gender:"male"
+                },
+            ]);
+            var maleimage = "https://th.bing.com/th/id/OIP.j8yd8dJ5215WbgQ0NsLzuAHaNK?w=2592&h=4608&rs=1&pid=ImgDetMain";
+            var femaleimage = "https://cdn.pixabay.com/photo/2014/04/02/14/10/female-306407_640.png";
+            return <div>
+                
+                <table border="1px solid">
+                    {
+                        students.map((x)=>{
+                            return <tr>
+                                <td>{x.firstname}</td>
+                                <td>{x.lastname}</td>
+                                <td>{x.age}</td>
+                                <td>
+                                    {
+                                        <img src={x.gender=='male'?maleimage:femaleimage} width="80px"/>
+                                    }
+                                    </td>
+                                
+                                </tr>
+                        })
+                    }
+                    
+                    
+                    </table>
+                
+                </div>
+        }
+        ReactDOM.render(<Jkl />, document.getElementById('d2'));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    
+   
+    <div id="d3"></div>
+
+    <script type="text/babel">
+    var ar = [12,34,55,55];
+    var jh1 = <div style={{display:'flex'}}>
+      {
+        ar.map((x)=>{
+        return <div style={{border:'2 px solid',margin:'10 px',padding:'10 px'}}>{x}</div>
+        })
+      }
+      </div>
+
+      ReactDOM.render(jh1,document.getElementById('d3'));
+    </script>
+  </body>
+</html>

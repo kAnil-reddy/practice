@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="radio" name="gen" value="male" onchange="abc(event)">:Male
+    <input type="radio" name="gen" value="female" onchange="abc(event)">:Female
+    <input type="radio" name="gen" value="others" onchange="abc(event)">Others
+    <h1 id="q1"></h1>
+    <script>
+        function abc(ev){
+               document.getElementById('q1').innerHTML=ev.target.value;     
+                }
+    </script>
+</body>
+</html>

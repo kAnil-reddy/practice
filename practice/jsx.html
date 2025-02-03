@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<scrip src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+  
+    
+
+  <input type="text" id="q1">
+  <button onclick="abc()">Add</button>
+  <ul id="d1"></ul>
+<script>
+  var ar = [] 
+  function abc(){
+    document.getElementById('d1').innerHTML="";
+    var x = document.getElementById('q1').value;
+    ar.push(x);
+    for(var i =0;i<=ar.length-1;i++){
+      var nli  = document.createElement('li');
+      nli.innerHTML=ar[i];
+      document.getElementById("d1").appendChild(nli);
+    }
+  }
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" onsubmit="abc(event)">
+        <input type="text" name="fullname">
+        <br> <input type="text" name="age">
+        <br>
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female
+        <input type="radio" name="gender" value="others">Others
+<br>
+<input type="checkbox" name="tech" value="html">:HTML
+<input type="checkbox" name="tech" value="css">:CSS
+        <button>Save</button>
+    </form>
+    <script>
+        function abc(ev){
+            ev.preventDefault();
+            myformdata = {};
+            var myform = new FormData(ev.target);
+            
+            for(var j of myform.keys()){
+                myformdata[j] = myform.getAll(j).length==1?myform.get(j):myform.getAll(j);
+            }
+            console.log(myformdata);
+        }
+    </script>
+</body>
+</html>
